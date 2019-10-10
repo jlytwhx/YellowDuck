@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/gomodule/redigo/redis"
 	gsessions "github.com/gorilla/sessions"
-	"github.com/jlytwhx/YelloDuck/session"
+	"github.com/jlytwhx/YellowDuck/session"
 )
 
 type Store interface {
