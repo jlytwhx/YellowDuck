@@ -1,4 +1,4 @@
-package session
+package sessions
 
 import (
 	"encoding/gob"
@@ -34,15 +34,15 @@ type Options struct {
 }
 
 type Session interface {
-	// Get returns the session value associated to the given key.
+	// Get returns the sessions value associated to the given key.
 	Get(key interface{}) interface{}
-	// Set sets the session value associated to the given key.
+	// Set sets the sessions value associated to the given key.
 	Set(key interface{}, val interface{}, expire int)
-	// Delete removes the session value associated to the given key.
+	// Delete removes the sessions value associated to the given key.
 	Delete(key interface{})
-	// Clear deletes all values in the session.
+	// Clear deletes all values in the sessions.
 	Clear()
-	// Options sets configuration for a session.
+	// Options sets configuration for a sessions.
 	Options(Options)
 	// Save saves all sessions used during the current request.
 	Save() error

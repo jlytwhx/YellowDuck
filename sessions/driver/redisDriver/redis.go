@@ -5,10 +5,11 @@ import (
 	"github.com/gomodule/redigo/redis"
 	gsessions "github.com/gorilla/sessions"
 	"github.com/jlytwhx/YellowDuck/session"
+	"github.com/jlytwhx/YellowDuck/sessions"
 )
 
 type Store interface {
-	session.Store
+	sessions.Store
 }
 
 func NewStore(size int, network, address, password string) (Store, error) {
