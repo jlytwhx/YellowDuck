@@ -1,11 +1,10 @@
 package url
 
 import (
-	"bjtubox/app/user"
 	"github.com/gin-gonic/gin"
 )
 
-func Include(group *gin.RouterGroup, pattern []user.UrlPatternStruct, middlewareList []gin.HandlerFunc) {
+func Include(group *gin.RouterGroup, pattern []PatternStruct, middlewareList []gin.HandlerFunc) {
 	type HttpMethod func(string, ...gin.HandlerFunc) gin.IRoutes
 	methods := map[string]HttpMethod{
 		"GET":     group.GET,
