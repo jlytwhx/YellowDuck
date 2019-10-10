@@ -4,7 +4,6 @@ import (
 	"errors"
 	"github.com/gomodule/redigo/redis"
 	gsessions "github.com/gorilla/sessions"
-	"github.com/jlytwhx/YellowDuck/session"
 	"github.com/jlytwhx/YellowDuck/sessions"
 )
 
@@ -72,7 +71,7 @@ func SetKeyPrefix(s Store, prefix string) error {
 	return nil
 }
 
-func (c *store) Options(options session.Options) {
+func (c *store) Options(options sessions.Options) {
 	c.RediStore.Options = &gsessions.Options{
 		Path:     options.Path,
 		Domain:   options.Domain,
